@@ -148,6 +148,20 @@ select * from Forma_De_Pago;
 
 -- Este S.P permite agregar métodos de pago dentro de la columna tipo_pago
 
+-- Creación de usuarios --
+
+-- el 'usuario1' con contraseña 'contraseña1' solo tendrá acceso a la lectura de las tablas de la B.D.
+
+create user 'usuario1'@'localhost' identified by 'contraseña1';
+
+grant select on *.* to 'usuario1'@'localhost';
+
+-- el 'usuario2' con contraseña 'contraseña2' tendra acceso a las sentencias select, insert y alter dentro de todas las tablas de la B.D.
+
+create user 'usuario2'@'localhost' identified by 'contraseña2';
+
+grant select, insert, alter on *.* to 'usuario2'@'localhost';
+
 
 
 
